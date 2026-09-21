@@ -4,12 +4,12 @@ import {Slider, SliderProps} from '@mui/material'
 const SuperRange: React.FC<SliderProps> = (props) => {
     return (
         <Slider
-            sx={{ // стили для слайдера // пишет студент
-
-            }}
             {...props}
-            id={props.id}
-            onChange={props.onChange}// отдаём слайдеру пропсы если они есть (value например там внутри)
+            sx={{'& .MuiSlider-thumb': {pointerEvents: 'auto',}, ...props.sx,}}
+            min={0}
+            max={100}
+            step={1}
+            // отдаём слайдеру пропсы если они есть (value например там внутри)
         />
     )
 }

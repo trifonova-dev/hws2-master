@@ -15,7 +15,14 @@ function HW11() {
     const [value1, setValue1] = useState(restoreState<number>('hw11-value1', 0))
     const [value2, setValue2] = useState(restoreState<number>('hw11-value2', 100))
 
-    const change = (event: any, value: any) => {
+    const change = (event: Event, value: number | number[], activeThumb: number) => {
+        console.log('CHANGE', {
+            value,
+            activeThumb,
+            clientX: (event as MouseEvent).clientX,
+            clientY: (event as MouseEvent).clientY,
+        })
+        // Логика корректная: массив значений для двойного слайдера, число для одиночного
         if (Array.isArray(value)) {
             setValue1(value[0])
             setValue2(value[1])
