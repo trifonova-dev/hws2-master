@@ -5,7 +5,7 @@ const SuperRange: React.FC<SliderProps> = (props) => {
     return (
         <Slider
             {...props}
-            sx={{'& .MuiSlider-thumb': {pointerEvents: 'auto',}, ...props.sx,}}
+            sx={{...props.sx,}}
             min={0}
             max={100}
             step={1}
